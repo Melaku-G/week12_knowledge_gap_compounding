@@ -72,11 +72,31 @@ The result is that merged LoRA models often recover near-base-model inference sp
 
 ## Experimental Direction
 
-To verify this mechanism, I benchmarked three setups:
+## Benchmark Results
+
+To verify the mechanism, I benchmarked three inference configurations:
 
 * Base model
 * Unmerged LoRA adapter
 * Merged LoRA adapter
+
+| Model Variant | Latency | Tokens/sec |
+| ------------- | ------- | ---------- |
+| Base model    | 39.386s | 3.25 tok/s |
+| Unmerged LoRA | 42.590s | 3.01 tok/s |
+| Merged LoRA   | 39.670s | 3.23 tok/s |
+
+The unmerged adapter reduced throughput by roughly 7–8% relative to the base model. After calling `merge_and_unload()`, inference speed returned almost exactly to baseline performance.
+
+The merged model is not faster than the base model because merging removes overhead — it does not create new optimization opportunities beyond the original transformer execution path.
+
+This supports the central mechanism explanation:
+
+* unmerged adapters introduce runtime low-rank computations,
+* additional memory reads occur during every forward pass,
+* optimized inference kernels become harder to fully utilize.
+
+Merging removes that dynamic overhead by folding the learned adapter weights directly into the transformer weights before generation begins.
 
 The key metric was tokens-per-second during generation.
 
@@ -111,6 +131,7 @@ The key insight is that inference performance is not determined only by paramete
 An unmerged LoRA adapter introduces additional computation and memory-access overhead during every forward pass. Merging removes that dynamic overhead by folding the adapter weights directly into the base model.
 
 That is why two models with effectively identical learned behavior can have very different inference latency profiles.
+
 
 
 
@@ -261,12 +282,12 @@ Same outputs. Lower latency.
 ## Demonstration (What You Should Observe)
 
 A simple benchmark typically shows:
+| Model Variant       |Latency    |Tokens/sec|
+| ---------------    | ---------- | ------- |
+  BASE MODEL           | 39.386s | 3.25 tok/s
+  UNMERGED LORA        | 42.590s | 3.01 tok/s
+  MERGED LORA          | 39.670s | 3.23 tok/s
 
-| Model Variant   | Tokens/sec | Latency |
-| --------------- | ---------- | ------- |
-| Base model      | Fast       | Low     |
-| LoRA (unmerged) | Slower     | +20–30% |
-| LoRA (merged)   | Fast again | ≈ Base  |
 
 This confirms:
 
