@@ -380,3 +380,6 @@ This is a **design trade-off**, not a limitation.
 * LoRA: Low-Rank Adaptation of Large Language Models
 * Hugging Face PEFT documentation
 * PyTorch profiling experiments comparing merged vs unmerged inference
+
+Published version:
+https://medium.com/p/281e51d31de9?postPublishedType=initial

@@ -80,3 +80,5 @@ Runtime execution structure matters just as much:
 That was the actual mechanism hidden behind the slowdown.
 
 Week 12 inference-time mechanics exploration.
+Published thread:
+https://x.com/home?lang=en

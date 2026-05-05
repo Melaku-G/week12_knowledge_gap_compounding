@@ -140,3 +140,12 @@ Merged and unmerged LoRA models may contain equivalent learned behavior while ex
 * kernel fusion compatibility,
 * quantized execution efficiency,
 * and decode-phase overhead accumulation.
+
+# Public Artifacts
+
+## Blog Post
+https://medium.com/p/281e51d31de9?postPublishedType=initial
+
+
+## Thread
+https://x.com/home?lang=en
