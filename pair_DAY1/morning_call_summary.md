@@ -1,10 +1,5 @@
-# Morning Call Summary
-We refined both questions to isolate inference-time mechanisms rather than general performance observations. 
+morning_call_summary.md
 
-The original draft question focused too narrowly on the Unsloth `FastLanguageModel.for_inference()` API and treated the observed speedup as a library-specific optimization question. During the call, we clarified that the deeper gap was not “what Unsloth does,” but why inference latency can change dramatically even when LoRA weights are merged and parameter count remains constant.
-
-We discussed whether the real issue was quantization, LoRA merging, or transformer inference phases. The question was sharpened toward a systems-level decomposition of inference latency across prefill and decode phases, kernel fusion, KV-cache behavior, and memory-bandwidth bottlenecks.
-
-The final version became more diagnostic by explicitly naming the paradox: identical merged model size but large latency difference. We also tightened the connection to the Week 11 final report’s Pareto-dominance claim so the grounding commit path was explicit.
-
-My partner clarified that their slowdown occurs pre-merge and is likely due to runtime adapter injection rather than model size.
+The morning call focused on transforming broad “inference speed” observations into mechanism-specific systems questions. My initial draft question focused too narrowly on the Unsloth FastLanguageModel.for_inference() API and treated the observed 2.41× speedup as a tooling phenomenon rather than an inference-systems problem.
+During discussion with my peer, we clarified that the real gap was understanding how transformer inference behavior changes across prefill, decode, quantization, kernel fusion, and KV-cache execution paths even when merged parameter counts remain unchanged. The question was sharpened toward experimental decomposition and mechanism attribution rather than benchmarking alone.
+In parallel, we refined my peer’s question from a generic “LoRA slows inference” observation into a more precise investigation of runtime adapter application overhead and why merge_and_unload() restores near-baseline throughput. By the end of the call, both questions were anchored to specific Week 10/11 artifacts and framed as experimentally testable inference-time mechanics problems.
