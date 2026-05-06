@@ -1,6 +1,6 @@
 # Week 12 — Pair Day Cycle: Agent & Tool-Use Internals
 
-## Overview
+### Overview 
 
 This repository contains my Week 12 pair-day submission focused on **agent and tool-use internals**, specifically investigating how large language models decide between continued reasoning and tool invocation in multi-step workflows.
 
