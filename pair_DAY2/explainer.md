@@ -171,7 +171,7 @@ Together, they define both:
   * and total latency.
 
 ---
-
+#
 ## Conclusion
 
 In multi-tool agent systems, the transition from reasoning to tool invocation is the central control point. It is governed not by explicit logic, but by the interaction between token probabilities, prompt structure, and guardrails.

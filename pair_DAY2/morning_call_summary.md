@@ -1,4 +1,4 @@
-# Morning Call Summary
+## Morning Call Summary
 
 During the morning call, we focused on sharpening my peer’s original broad question about agent internals into a more testable systems-level investigation. The initial version attempted to cover the full decision pipeline, multiple guardrails, and cross-project behavior, which made it difficult to isolate a concrete mechanism.
 

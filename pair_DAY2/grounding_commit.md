@@ -1,4 +1,4 @@
-# Grounding Commit
+## Grounding Commit
 
 ## Updated Artifact
 
