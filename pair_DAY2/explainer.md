@@ -181,3 +181,46 @@ Understanding and controlling this boundary is essential for building agents tha
 > how do constraints reshape the model’s generation space so that the correct behavior becomes the most likely behavior?
 
 This reframing allows us to design agent systems that are not only functional, but predictable and optimizable.
+
+
+# sources
+
+
+This explainer is based on a combination of canonical research papers, official documentation, and experimental validation.
+
+---
+
+## Canonical Papers
+
+
+### 1. ReAct: Synergizing Reasoning and Acting in Language Models
+
+https://arxiv.org/abs/2210.03629
+
+* Introduces the reasoning + acting loop used in modern agents
+* Directly relevant to understanding the decision boundary between reasoning and tool use
+
+---
+
+## Documentation & Systems References
+
+### 2. LangChain Documentation
+
+https://python.langchain.com/
+
+* Provides abstractions for agent loops and tool calling
+* Used for implementing the experimental setup
+
+---
+
+### 3. OpenAI Function Calling / Tool Use Docs
+
+https://platform.openai.com/docs
+
+* Explains structured tool invocation formats
+* Informs schema constraint design and JSON tool-call enforcement
+
+
+# post link
+
+https://medium.com/p/d9fedf01b4a3?postPublishedType=initial
