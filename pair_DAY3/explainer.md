@@ -1,4 +1,8 @@
 # When Benchmarks Lie: LoRA Rank, Target Modules, and Hidden Behavioral Failures
+##Question addressed:
+In Week 11 I fine tuned Qwen2.5-0.5B-Instruct with LoRA (rank=16, targeting only q_proj and v_proj). The adapter improved overall but consistently failed at the confidence≈0.50 boundary between phrasing tiers  a case the benchmark never caught. How do rank and target-module selection constrain which behavioral corrections are actually representable during fine-tuning, and why does that produce failures near ambiguous boundaries while aggregate scores still look fine?
+
+---
 
 ## Overview
 
