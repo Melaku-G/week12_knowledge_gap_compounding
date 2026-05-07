@@ -221,6 +221,23 @@ A model can score well globally while remaining structurally incapable of expres
 
 Understanding that distinction is essential for evaluating post-training systems honestly.
 
+Tool Used
+
+Tool:
+- Claude Code with artifact inspection
+
+Artifacts Reviewed:
+- lora_train.py
+- memo.md Section 4.4
+- ablation_results.json
+- benchmark evaluation traces
+
+Purpose:
+The artifacts were inspected to identify whether the observed boundary failures originated from:
+- optimization instability,
+- insufficient data,
+- or representational constraints imposed by low-rank adaptation and selective target-module coverage.
+
 # sources
 Hu et al. (2021) — LoRA: Low-Rank Adaptation of Large Language Models https://arxiv.org/abs/2106.09685
 
