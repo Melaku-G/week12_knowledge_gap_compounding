@@ -220,3 +220,16 @@ The key lesson is:
 A model can score well globally while remaining structurally incapable of expressing certain local corrections.
 
 Understanding that distinction is essential for evaluating post-training systems honestly.
+
+# sources
+Hu et al. (2021) — LoRA: Low-Rank Adaptation of Large Language Models https://arxiv.org/abs/2106.09685
+
+Aghajanyan et al. (2020) — Intrinsic Dimensionality Explains the Effectiveness of Language Model Fine-Tuning https://arxiv.org/abs/2012.13255
+
+Dettmers et al. (2023) — QLoRA: Efficient Finetuning of Quantized LLMs https://arxiv.org/abs/2305.14314
+
+Dao et al. (2022) — FlashAttention https://arxiv.org/abs/2205.14135
+
+Vaswani et al. (2017) — Attention Is All You Need https://arxiv.org/abs/1706.03762
+
+Anthropic — Transformer Circuits https://transformer-circuits.pub/
