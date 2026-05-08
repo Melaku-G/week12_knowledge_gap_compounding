@@ -1,7 +1,7 @@
-# Morning Call Summary
+# Evening Call Summary
 
-During the morning call, we refined the original question from a broad inquiry about LoRA effectiveness into a more mechanism-focused investigation tied directly to a Week 11 artifact. The initial version discussed LoRA configuration generally, but it did not isolate a concrete observed failure pattern.
+During the evening call, we reviewed the explainer and discussed whether the argument successfully connected the observed benchmark behavior to representational limitations in LoRA fine-tuning. The explanation clearly established that benchmark averages can conceal localized failures near ambiguous decision boundaries, which aligned well with the original gap.
 
-We sharpened the question by anchoring it to a specific behavioral issue: failures occurring near the confidence≈0.50 phrasing boundary despite strong aggregate benchmark performance. We also narrowed the focus to two controllable architectural factors — LoRA rank and target-module selection — instead of discussing all adapter hyperparameters simultaneously.
+Feedback focused on improving the distinction between optimization failure and representational failure. We discussed how the issue was not necessarily insufficient training, but potentially the inability of a low-rank update constrained to q_proj and v_proj to fully reshape the decision geometry required near confidence boundaries.
 
-By the end of the discussion, the question evolved from a general fine-tuning question into a representational-capacity question about what low-rank adapters can and cannot express during post-training.
+The revised version clarified how LoRA rank restricts the dimensionality of behavioral change while target-module selection limits where those changes can occur inside the transformer. The final explainer became significantly more grounded in transformer mechanics and less dependent on surface benchmark interpretation.
