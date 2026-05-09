@@ -149,3 +149,5 @@ https://medium.com/p/281e51d31de9?postPublishedType=initial
 
 ## Thread
 https://x.com/home?lang=en
+
+Final ReflectionAcross five Pair Days, the portfolio evolved from:- benchmark-focused implementation work,into:- mechanism-aware systems reasoning.The investigations strengthened:- inference understanding,- agent reliability analysis,- post-training interpretability,- and statistical evaluation rigor.The most important lesson across the week was:> benchmark improvement alone is insufficient without understanding the systems assumptions underneath the benchmark itself.
